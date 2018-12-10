@@ -4,12 +4,13 @@ import {fetchLastStimuluses} from '../../actions/geriatrics';
 
 class GeriatricsPage extends Component {
     componentDidMount() {
-        this.props.fetchLastStimuluses('token2');
+        this.props.fetchLastStimuluses('token');
+
     }
 
     render() {
 
-        //const stimuluses =  this.props.geriatrics.stimuluses;
+        //const stimuluses =  this.props.geriatrics.last_stimulus;
         /*
         try {
             stimuluses.map(x => console.log(x.sensor_location_id))

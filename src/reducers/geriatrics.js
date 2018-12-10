@@ -1,4 +1,4 @@
-import {FETCHED_LAST_STIMULUSES} from '../actions/geriatrics';
+import {GeriatricsActionList} from '../actions/geriatrics';
 
 const initialState = {
 
@@ -6,10 +6,10 @@ const initialState = {
 
 export default (state = initialState,action) => {
     switch (action.type) {
-        case FETCHED_LAST_STIMULUSES:
+        case GeriatricsActionList.FETCHED_LAST_STIMULUSES:
             return {
                 ...state,
-                stimuluses:action.payload
+                last_stimulus:action.payload
             }
         default:
             return state;

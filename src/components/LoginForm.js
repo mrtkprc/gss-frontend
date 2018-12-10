@@ -1,5 +1,9 @@
 import React,{Component} from 'react'
-import { Button, Form, Grid, Header, Image, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
+import {checkLoginOperation}  from './../actions/users'
+import {connect} from 'react-redux';
+import {fetchLastStimuluses} from "../actions/geriatrics";
+
 
 class LoginForm extends Component {
     state = {
@@ -26,7 +30,13 @@ class LoginForm extends Component {
            errors
         });
 
-
+        if((Object.keys(errors).length) === 0)
+        {
+            this.props.checkLoginOperation(this.state.email,this.state.password);
+            if(this.props.users.isAuthenticated)
+                console.log("Succes on logining");
+        }
+        console.log(this.state.errors);
     };
     render()
     {
@@ -60,8 +70,8 @@ class LoginForm extends Component {
                     </Header>
                 )
             }
-            <Header as='h2' color='teal' textAlign='center'>
-                GSS Sistemine Giriş Yap
+            <Header as='h4' color='teal' textAlign='center'>
+                Login to (G)eriatric (S)urveillance (S)ystem
             </Header>
             <Form onSubmit={this.onSubmit} size='large'>
                 <Segment stacked>
@@ -73,7 +83,7 @@ class LoginForm extends Component {
                         value={this.state.email}
                         onChange={this.handleChanged}
                         iconPosition='left'
-                        placeholder='Email Adresiniz'/>
+                        placeholder='Your Email Adress'/>
                     <Form.Input
                         error={!!errors.password}
                         fluid icon='lock'
@@ -82,16 +92,16 @@ class LoginForm extends Component {
                         value={this.state.password}
                         onChange={this.handleChanged}
                         iconPosition='left'
-                        placeholder='Şifreniz'
+                        placeholder='Password'
                         type='password'
                     />
-                    <Button color='teal' fluid size='large'>
-                        Giriş Yap
+                    <Button  color='teal' fluid size='large'>
+                        Login
                     </Button>
                 </Segment>
             </Form>
             <Message>
-                Aramıza katılmak için <a href='#'>Tıklayınız</a>
+                To know that your loved one is safe, <a href='/register'>Click me!</a>
             </Message>
         </Grid.Column>
     </Grid>
@@ -99,5 +109,12 @@ class LoginForm extends Component {
     );
     }
 }
-
-export default LoginForm
+const mapStateToProps = (state) => {
+    return {
+        users:state.users
+    }
+}
+const mapDispatchToProps = {
+    checkLoginOperation
+};
+export default connect(mapStateToProps,mapDispatchToProps)(LoginForm);
