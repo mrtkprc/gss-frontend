@@ -4,7 +4,7 @@ import {fetchLastStimuluses} from '../../actions/geriatrics';
 
 class GeriatricsPage extends Component {
     componentDidMount() {
-        this.props.fetchLastStimuluses('token');
+        //this.props.fetchLastStimuluses('token');
 
     }
 

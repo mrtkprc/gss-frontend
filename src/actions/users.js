@@ -7,9 +7,7 @@ export const UserActionList = {
 };
 
 //export const CHECK_LOGIN = 'CHECK_LOGIN';
-
 export function checkLoginOperation(email,password){
-    console.log("checklogin");
     const token = tokenizeValues({email,password});
     return dispatch => {
         axios.post(`${API_BASE}/relative/login_control/`,{token})

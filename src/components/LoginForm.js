@@ -1,16 +1,27 @@
 import React,{Component} from 'react'
 import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
-import {checkLoginOperation}  from './../actions/users'
 import {connect} from 'react-redux';
+import {Redirect} from  'react-router-dom';
 import {fetchLastStimuluses} from "../actions/geriatrics";
+import {checkLoginOperation}  from './../actions/users'
 
 
 class LoginForm extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     state = {
         email:'',
         password:'',
         errors:{}
     };
+
+    componentWillMount() {
+
+    }
+
+
     handleChanged = (e) =>{
         this.setState({
             [e.target.name]:e.target.value
@@ -31,16 +42,14 @@ class LoginForm extends Component {
         });
 
         if((Object.keys(errors).length) === 0)
-        {
             this.props.checkLoginOperation(this.state.email,this.state.password);
-            if(this.props.users.isAuthenticated)
-                console.log("Succes on logining");
-        }
-        console.log(this.state.errors);
     };
+
     render()
     {
-        const errors = this.state.errors;
+    const errors = this.state.errors;
+    if(this.props.users.isAuthenticated)
+        return (<Redirect to="/"/>);
     return (
     <div className='login-form'>
                 <style>{`
