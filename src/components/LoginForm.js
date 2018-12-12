@@ -2,16 +2,13 @@ import React,{Component} from 'react'
 import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
 import {connect} from 'react-redux';
 import {Redirect} from  'react-router-dom';
-import {fetchLastStimuluses} from "../actions/geriatrics";
 import {checkLoginOperation}  from './../actions/users'
+import {fetchLastStimuluses} from "../actions/geriatrics";
 
 
 class LoginForm extends Component {
-    constructor(props) {
-        super(props);
-    }
-
     state = {
+        isLoginTried:false,
         email:'',
         password:'',
         errors:{}
@@ -36,20 +33,26 @@ class LoginForm extends Component {
         return errors;
     };
     onSubmit = (e) => {
+        e.preventDefault();
         const errors = this.validate();
         this.setState({
            errors
         });
 
         if((Object.keys(errors).length) === 0)
-            this.props.checkLoginOperation(this.state.email,this.state.password);
+        {
+            this.props.checkLoginOperation(this.state.email, this.state.password);
+            this.setState({isLoginTried:true});
+        }
     };
 
     render()
     {
     const errors = this.state.errors;
     if(this.props.users.isAuthenticated)
+    {
         return (<Redirect to="/"/>);
+    }
     return (
     <div className='login-form'>
                 <style>{`
@@ -78,6 +81,19 @@ class LoginForm extends Component {
                         You should enter password
                     </Header>
                 )
+
+
+            }
+            {
+
+                (this.props.users.isLoginTried && !this.props.users.userAuth.status)
+                ?
+                    <Header as='h4' color='red' textAlign='center'>
+                        Authentication Failed
+                    </Header>
+                :
+                    ("")
+
             }
             <Header as='h4' color='teal' textAlign='center'>
                 Login to (G)eriatric (S)urveillance (S)ystem
@@ -120,10 +136,12 @@ class LoginForm extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        users:state.users
+        users:state.users,
+        geriatrics:state.geriatrics
     }
 }
 const mapDispatchToProps = {
-    checkLoginOperation
+    checkLoginOperation,
+    fetchLastStimuluses
 };
 export default connect(mapStateToProps,mapDispatchToProps)(LoginForm);

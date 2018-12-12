@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Route,  Switch, Redirect } from 'react-router-dom'; //Link, NavLink, Redirect,
+import {Route,  Switch } from 'react-router-dom'; //Link, NavLink, Redirect,
 import GeriatricsPage from "./GeriatricsPage";
 import ErrorPage from './ErrorPage';
 import HomePage from "./HomePage";

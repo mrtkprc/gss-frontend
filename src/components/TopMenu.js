@@ -3,31 +3,26 @@ import { Menu,Image } from 'semantic-ui-react';
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchLastStimuluses} from '../actions/geriatrics';
+import LocationNotifierTop from './LocationNotifierTop'
 
 class TopMenu extends Component {
     state = {
         lastLocation:'NoneLocat',
-        lastSeenTime:'xx:yy'
+        lastSeenTime:'xx:yy',
+        token:''
     }
     componentDidMount() {
-        console.log(this.props);
-        /*
-        setInterval(
-            () => {
-                this.props.fetchLastStimuluses();
-            }
-            ,50000
-        );
-        */
-
-
+        setInterval(()=> {
+            if(this.props.users.isAuthenticated)
+                this.props.fetchLastStimuluses(this.props.users.userAuth)
+        },100000);
     }
 
     render() {
         return (
             <Menu stackable>
                 <Menu.Item>
-                    <img src='https://react.semantic-ui.com/logo.png' />
+                    <img alt="Logo" src='https://react.semantic-ui.com/logo.png' />
                 </Menu.Item>
                 <Menu.Item
                     name='home'
@@ -47,9 +42,8 @@ class TopMenu extends Component {
                         ?
                         <Menu.Item position='right' style={{color: 'darkgray', backgroundColor: '#f7faff', width: '200px'}}
                                    name='last_stimulus' as={Link} to="/surveil">
-                            <Image src={process.env.PUBLIC_URL + '/location.png'}/>
-                            Kitchen (19:11)
-                            &nbsp; <Image style={{paddingLeft: '5px'}} src={process.env.PUBLIC_URL + '/refresh.png'}/>
+                        <Image alt="Location Info" src={process.env.PUBLIC_URL + '/location.png'}/>
+                            <LocationNotifierTop/>
                         </Menu.Item>
                         :
                         <Menu.Item position='right' name='login' style={{color:'red',width:'100px'}} as={Link} to="/login">

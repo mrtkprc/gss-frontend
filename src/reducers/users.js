@@ -3,7 +3,7 @@ import {UserActionList} from './../actions/users';
 const initialState = {
     isAuthenticated:false,
     isLoginTried:false,
-    user:{}
+    userAuth:{}
 };
 
 export default (state = initialState,action) => {
