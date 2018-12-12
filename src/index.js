@@ -12,16 +12,40 @@ import {composeWithDevTools} from 'redux-devtools-extension';
 import {Provider} from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
+import { PersistGate } from 'redux-persist/lib/integration/react';
+
+const persistConfig = {
+    key: 'root',
+    storage: storage,
+    stateReconciler: autoMergeLevel2
+};
+
+const pReducer = persistReducer(persistConfig, rootReducer);
+
+
+
 const store = createStore(
-    rootReducer,
+    pReducer, //buraso rootReducerdu
     composeWithDevTools(applyMiddleware(thunk))
 );
 
+export const persistor = persistStore(store);
+
+store.subscribe( () => {
+});
+
 ReactDOM.render(
+    <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
     <BrowserRouter>
-        <Provider store={store}>
-            <App />
-        </Provider>
+
+                <App />
+
     </BrowserRouter>
+        </PersistGate>
+    </Provider>
     ,document.getElementById('root'));
 registerServiceWorker();
