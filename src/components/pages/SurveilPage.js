@@ -4,7 +4,6 @@ import FeedRight from './../FeedRight';
 import RoomLastActivities from './../RoomLastActivities';
 import {fetchSensorLocations} from "../../actions/surveils";
 import {connect} from 'react-redux';
-import _ from 'lodash';
 
 class SurveilPage extends Component {
     state = {
@@ -15,13 +14,19 @@ class SurveilPage extends Component {
 
     }
 
-    componentWillMount()
+    async componentWillMount()
     {
-        this.props.fetchSensorLocations(this.props.users.userAuth);
-        this.setState({sensor_locations:this.props.sensor_locations});
+        await this.props.fetchSensorLocations(this.props.users.userAuth);
+        setTimeout(() => {
+            this.setState({sensor_locations:this.props.sensor_locations});
+        },500);
+
     }
 
     createRooms(){
+        if(this.state.sensor_locations === undefined || this.state.sensor_locations === null)
+            return (<div></div>);
+
         let rooms = [];
         const EACH_ROW_ROOM_COUNT = 3;
         const ROW_COUNT = Math.ceil(Object.keys(this.state.sensor_locations).length / EACH_ROW_ROOM_COUNT);
@@ -38,24 +43,15 @@ class SurveilPage extends Component {
                     break;
                 room = this.state.sensor_locations[current_room];
 
-                children.push(<Grid.Column key={j}><RoomLastActivities key={room._id} iconName="bath" roomName={room.name}/></Grid.Column>)
+                children.push(<Grid.Column key={j}><RoomLastActivities roomID={room._id} key={room._id} iconName={room.icon_name} roomName={room.name}/></Grid.Column>)
                 console.log();
             }
             rooms.push(<Grid.Row key={i}>{children}</Grid.Row>)
         }
-
-
-
         return rooms;
-
     }
 
     render() {
-        _.forEach(this.props.sensor_locations,(val,key) => {
-
-
-        });
-
         return (
             <Grid stackable doubling celled>
                 <Grid.Column width={12}>
@@ -77,24 +73,11 @@ const mapStateToProps = (state) => {
     return {
         geriatrics:state.geriatrics,
         users:state.users,
-        sensor_locations:state.surveils.sensor_locations
+        sensor_locations:state.surveils.sensor_locations,
+        surveils: state.surveils
     }
 };
 const mapDispatchToProps = {
     fetchSensorLocations
 };
 export default connect(mapStateToProps,mapDispatchToProps)(SurveilPage);
-
-/*
-<Grid.Row>
-    <Grid.Column>
-        <RoomLastActivities iconName="bath" roomName="Bath"/>
-    </Grid.Column>
-    <Grid.Column>
-        <RoomLastActivities iconName="food" roomName="Kitchen"/>
-    </Grid.Column>
-    <Grid.Column>
-        <RoomLastActivities iconName="bed" roomName="Bedroom"/>
-    </Grid.Column>
-</Grid.Row>
-*/
