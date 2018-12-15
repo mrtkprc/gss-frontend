@@ -1,36 +1,33 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {fetchLastStimuluses} from '../../actions/geriatrics';
-
+import {Tab} from 'semantic-ui-react';
+import GeriatricInformation from '../GeriatricInformation';
 class GeriatricsPage extends Component {
+    componentWillMount() {
+
+    }
+
     componentDidMount() {
-        //this.props.fetchLastStimuluses('token');
 
     }
 
     render() {
-
-        //const stimuluses =  this.props.geriatrics.last_stimulus;
-        /*
-        try {
-            stimuluses.map(x => console.log(x.sensor_location_id))
-        }
-        catch(err) {
-            console.log(err);
-        }
-        */
+        const panes = [
+            { menuItem: 'Geriatric Information', render: () => <Tab.Pane><GeriatricInformation/></Tab.Pane> },
+            { menuItem: 'Relative Information', render: () => <Tab.Pane>Tab 2 Content</Tab.Pane> },
+            { menuItem: 'Sensors Information', render: () => <Tab.Pane>Tab 3 Content</Tab.Pane> },
+        ]
         return (
-            <div>
-                <h2>Geriatrics Page</h2>
-
-            </div>
+            <Tab menu={{ fluid: true, vertical: true, tabular: true }} panes={panes} />
         );
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        geriatrics:state.geriatrics
+        geriatrics:state.geriatrics,
+        users:state.users
     }
 };
 const mapDispatchToProps = {

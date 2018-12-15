@@ -11,6 +11,11 @@ export default (state = initialState,action) => {
                 ...state,
                 last_stimulus:action.payload
             }
+        case GeriatricsActionList.FETCHED_GERIATRIC_INFO:
+            return {
+                ...state,
+                geriatric_info:action.payload
+            }
         default:
             return state;
 

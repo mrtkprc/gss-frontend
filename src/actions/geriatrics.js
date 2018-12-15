@@ -3,8 +3,22 @@ import axios from 'axios';
 import {encodeValues} from '../helpers/backendHelper';
 
 export const GeriatricsActionList = {
-    FETCHED_LAST_STIMULUSES:'FETCHED_LAST_STIMULUSES'
+    FETCHED_LAST_STIMULUSES:'FETCHED_LAST_STIMULUSES',
+    FETCHED_GERIATRIC_INFO:'FETCHED_GERIATRIC_INFO',
 } ;
+
+export function fetchGeriatricInfo(geriatric_id)
+{
+    const token = encodeValues(geriatric_id);
+    return dispatch => {
+        axios.get(`${API_BASE}/geriatric/get/geriatric?token=${token}`)
+            .then(result => result.data)
+            .then(data => dispatch({
+                type:GeriatricsActionList.FETCHED_GERIATRIC_INFO,
+                payload:data
+            }))
+    }
+}
 
 export function fetchLastStimuluses(values){
     const token = encodeValues(values);

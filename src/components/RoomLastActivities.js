@@ -56,12 +56,11 @@ class RoomLastActivities extends Component {
 
     async componentDidMount()
     {
-        await this.props.fetchSensorLocationStimuluses({sensor_location_id:this.props.roomID});
         await this.createActionInRoomItems();
     }
     async componentWillMount()
     {
-
+        await this.props.fetchSensorLocationStimuluses({sensor_location_id:this.props.roomID});
     }
 
     render() {
