@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import {Segment,Header,Icon,Form,Input} from 'semantic-ui-react';
+import {Segment,Header,Icon,Form,Input,Button,Label} from 'semantic-ui-react';
 import {connect} from 'react-redux';
 import {fetchGeriatricInfo} from "../actions/geriatrics";
-import PropTypes from 'prop-types';
 
 class GeriatricInformation extends Component {
     state = {
@@ -15,33 +14,31 @@ class GeriatricInformation extends Component {
     };
 
     componentDidMount() {
-        console.log("cdm");
     }
 
     async componentWillMount() {
-        console.log("cwm");
-
         await this.props.fetchGeriatricInfo({
             _id:this.props.users.userAuth.geriatric_id
         });
-        /*
-        setTimeout(()=> {
-            console.log(this.props.geriatrics.geriatric_info);
-        },1000);
-        */
     }
 
     componentWillReceiveProps(nextProps) {
-        //console.log("cwrp");
-        console.log("cwrp: ",nextProps);
         const {name,surname,gsm,public_key,telegram_chat_id,_id} = nextProps.geriatrics.geriatric_info;
         this.setState({name,surname,gsm,public_key,telegram_chat_id,_id});
+    }
 
+    saveChanges = () => {
+        console.log("Save changes clicked");
+    }
+    handledChanged = (e,data) => {
+
+        this.setState({
+            [data.input]:data.value
+        });
     }
 
 
     render() {
-        console.log("render and state",this.state);
         return (
             <Segment>
                 <Header as='h4' icon textAlign='center'>
@@ -49,18 +46,36 @@ class GeriatricInformation extends Component {
                     <Header.Content>Geriatric Information</Header.Content>
                 </Header>
                 <Form>
-                    <Input size="large" icon='user circle' fluid iconPosition='left' value={this.state.name} placeholder='Name' />
-                    <br/>
-                    <Input size="large" icon='users' fluid iconPosition='left' value={this.state.surname} placeholder='Surname' />
-                    <br/>
-                    <Input size="large" icon='phone' fluid iconPosition='left' value={this.state.gsm} placeholder='Mobile Phone' />
-                    <br/>
-                    <Input size="large" icon='key' fluid disabled iconPosition='left' value={this.state.public_key} placeholder='Public Key' />
-                    <br/>
-                    <Input size="large" icon='telegram' fluid disabled iconPosition='left' value={this.state.telegram_chat_id} placeholder='Telegram Bot ID' />
-                    <br/>
-                    <Input size="large" icon='id card' fluid disabled iconPosition='left' value={this.state._id} placeholder='Geriatric ID' />
-                    <br/>
+                    <Form.Field>
+                        <Label basic color="blue" pointing="below">Name</Label>
+                        <Input size="large" input={"name"} icon='user circle' onChange={this.handledChanged} fluid iconPosition='left' value={this.state.name} placeholder='Name' />
+                    </Form.Field>
+                    <Form.Field>
+                        <Label basic color="blue" pointing="below">Surname</Label>
+                        <Input size="large" input={"surname"} icon='users' onChange={this.handledChanged} fluid iconPosition='left' value={this.state.surname} placeholder='Surname' />
+                    </Form.Field>
+                    <Form.Field>
+                        <Label basic color="blue" pointing="below">Mobile Phone</Label>
+                        <Input size="large" maxLength="10" input={"gsm"} icon='phone' onChange={this.handledChanged} fluid iconPosition='left' value={this.state.gsm} placeholder='Mobile Phone' />
+                    </Form.Field>
+                    <Form.Field>
+                        <Label basic color="blue" pointing="below">Public Key</Label>
+                        <Input size="large" icon='key' fluid disabled iconPosition='left' value={this.state.public_key} placeholder='Public Key' />
+                    </Form.Field>
+                    <Form.Field>
+                        <Label basic color="blue" pointing="below">Telegram Chat ID</Label>
+                        <Input size="large" icon='telegram' fluid disabled iconPosition='left' value={this.state.telegram_chat_id} placeholder='Telegram Bot ID' />
+                    </Form.Field>
+                    <Form.Field>
+                        <Label basic color="blue" pointing="below">Geriatric ID</Label>
+                        <Input size="large" icon='id card' fluid disabled iconPosition='left' value={this.state._id} placeholder='Geriatric ID' />
+                    </Form.Field>
+
+                    <Button.Group fluid>
+                        <Button onClick={this.saveChanges} size="large" positive>Save</Button>
+                        <Button.Or />
+                        <Button basic color="red">Cancel</Button>
+                    </Button.Group>
 
                 </Form>
             </Segment>

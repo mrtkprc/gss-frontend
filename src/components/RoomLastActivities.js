@@ -9,7 +9,8 @@ import uuidv4 from 'uuid/v4';
 class RoomLastActivities extends Component {
 
     state = {
-        action_count:0
+        action_count:0,
+
     };
 
     getTodayActionCount()
@@ -56,12 +57,23 @@ class RoomLastActivities extends Component {
 
     async componentDidMount()
     {
+
         await this.createActionInRoomItems();
+
     }
     async componentWillMount()
     {
         await this.props.fetchSensorLocationStimuluses({sensor_location_id:this.props.roomID});
+        this.setState({roomID:this.props.roomID});
     }
+
+    componentWillReceiveProps(nextProps)
+    {
+        this.setState({sensor_location_stimuluses:nextProps.sensor_location_stimuluses});
+        this.forceUpdate();
+
+    }
+
 
     render() {
 

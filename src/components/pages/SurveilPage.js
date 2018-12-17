@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Grid} from 'semantic-ui-react';
+import { Grid,Dimmer,Loader} from 'semantic-ui-react';
 import FeedRight from './../FeedRight';
 import RoomLastActivities from './../RoomLastActivities';
 import {fetchSensorLocations} from "../../actions/surveils";
@@ -7,25 +7,34 @@ import {connect} from 'react-redux';
 
 class SurveilPage extends Component {
     state = {
+
     };
 
     componentDidMount()
     {
 
     }
+    componentWillReceiveProps(nextProps)
+    {
+        this.setState({sensor_locations:nextProps.sensor_locations});
+
+    }
 
     async componentWillMount()
     {
+
         await this.props.fetchSensorLocations(this.props.users.userAuth);
+        /*
         setTimeout(() => {
             this.setState({sensor_locations:this.props.sensor_locations});
         },500);
+        */
 
     }
 
     createRooms(){
         if(this.state.sensor_locations === undefined || this.state.sensor_locations === null)
-            return (<div></div>);
+            return (<Dimmer active><Loader inverted size='medium'>Loading</Loader></Dimmer>);
 
         let rooms = [];
         const EACH_ROW_ROOM_COUNT = 3;
