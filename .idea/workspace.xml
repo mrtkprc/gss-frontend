@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b4e43f9c-56db-4fd2-b46a-c60435f6975e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/GeriatricInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GeriatricInformation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RoomLastActivities.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RoomLastActivities.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/geriatrics.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/geriatrics.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/RelativeInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RelativeInformation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SensorsInformation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SensorsInformation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/GeriatricsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/GeriatricsPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/SurveilPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/SurveilPage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,25 +23,26 @@
     <session id="-1463417722">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="19" />
+          <entry key="project.closed" value="21" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.10" value="2" />
-          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.11" value="3" />
           <entry key="project.open.time.12" value="4" />
           <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.14" value="2" />
           <entry key="project.open.time.18" value="1" />
           <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.35" value="1" />
           <entry key="project.open.time.38" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="21" />
+          <entry key="project.opened" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="1" />
           <entry key="gitignore" value="3" />
-          <entry key="js" value="120" />
+          <entry key="js" value="134" />
           <entry key="json" value="5" />
           <entry key="lock" value="1" />
           <entry key="md" value="1" />
@@ -51,7 +55,7 @@
           <entry key="CSS" value="1" />
           <entry key="Image" value="1" />
           <entry key="JSON" value="5" />
-          <entry key="JavaScript" value="120" />
+          <entry key="JavaScript" value="134" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="SVG" value="1" />
           <entry key="yarn.lock" value="1" />
@@ -60,13 +64,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="44" />
-          <entry key="js" value="26201" />
+          <entry key="js" value="27642" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="4" />
-          <entry key="JavaScript" value="26197" />
+          <entry key="JavaScript" value="27638" />
           <entry key="PLAIN_TEXT" value="44" />
         </counts>
       </usages-collector>
@@ -74,47 +78,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/RelativeInformation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1606">
+              <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/SensorsInformation.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="37" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/pages/SurveilPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/GeriatricInformation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="58" column="58" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/RoomLastActivities.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="902">
-              <caret line="65" column="95" selection-start-line="65" selection-start-column="95" selection-end-line="65" selection-end-column="95" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/pages/GeriatricsPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="132">
+              <caret line="6" column="118" selection-start-line="6" selection-start-column="118" selection-end-line="6" selection-end-column="118" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -123,10 +115,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/LoginForm.js">
+        <entry file="file://$PROJECT_DIR$/src/components/pages/SurveilPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="24" selection-end-column="11" />
+            <state relative-caret-position="22">
+              <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/LoadingIndicator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/users.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,6 +169,8 @@
       <find>isA</find>
       <find>Image</find>
       <find>action_count</find>
+      <find>this.</find>
+      <find>fetchSensor</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -165,10 +183,8 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/components/pages/ErrorPage.js" />
         <option value="$PROJECT_DIR$/src/config/env.js" />
-        <option value="$PROJECT_DIR$/src/actions/users.js" />
         <option value="$PROJECT_DIR$/src/components/pages/HomePage.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/reducers/users.js" />
         <option value="$PROJECT_DIR$/src/helpers/backendHelper.js" />
         <option value="$PROJECT_DIR$/src/components/LoginForm.js" />
         <option value="$PROJECT_DIR$/src/components/pages/IndexPage.js" />
@@ -183,14 +199,17 @@
         <option value="$PROJECT_DIR$/src/components/FeedRight.js" />
         <option value="$PROJECT_DIR$/src/components/ActionInRoomItem.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/reducers/geriatrics.js" />
+        <option value="$PROJECT_DIR$/src/components/RoomLastActivities.js" />
+        <option value="$PROJECT_DIR$/src/components/GeriatricInformation.js" />
+        <option value="$PROJECT_DIR$/src/actions/geriatrics.js" />
+        <option value="$PROJECT_DIR$/src/reducers/users.js" />
+        <option value="$PROJECT_DIR$/src/components/RelativeInformation.js" />
+        <option value="$PROJECT_DIR$/src/components/LoadingIndicator.js" />
+        <option value="$PROJECT_DIR$/src/components/pages/SurveilPage.js" />
+        <option value="$PROJECT_DIR$/src/actions/users.js" />
         <option value="$PROJECT_DIR$/src/components/SensorsInformation.js" />
         <option value="$PROJECT_DIR$/src/components/pages/GeriatricsPage.js" />
-        <option value="$PROJECT_DIR$/src/reducers/geriatrics.js" />
-        <option value="$PROJECT_DIR$/src/actions/geriatrics.js" />
-        <option value="$PROJECT_DIR$/src/components/RelativeInformation.js" />
-        <option value="$PROJECT_DIR$/src/components/GeriatricInformation.js" />
-        <option value="$PROJECT_DIR$/src/components/RoomLastActivities.js" />
-        <option value="$PROJECT_DIR$/src/components/pages/SurveilPage.js" />
       </list>
     </option>
   </component>
@@ -320,18 +339,20 @@
       <workItem from="1544769911141" duration="14814000" />
       <workItem from="1544858906287" duration="1591000" />
       <workItem from="1544865923032" duration="5601000" />
-      <workItem from="1545042539032" duration="3384000" />
+      <workItem from="1545042539032" duration="5482000" />
+      <workItem from="1545060882112" duration="3919000" />
+      <workItem from="1545121761315" duration="2629000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149625000" />
+    <option name="totallyTimeSpent" value="158271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.28616852" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25119236" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -345,7 +366,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3291815" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.31850535" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.31850535" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -421,13 +442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/helpers/backendHelper.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -447,13 +461,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="24" column="34" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -499,13 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/surveils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="78" selection-start-line="25" selection-start-column="78" selection-end-line="25" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/FeedRight.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -520,57 +520,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/geriatrics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RelativeInformation.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SensorsInformation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ActionInRoomItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pages/GeriatricsPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/LoginForm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="44">
           <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="24" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GeriatricInformation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="58" column="58" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -584,10 +544,91 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/GeriatricInformation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="62" column="53" selection-start-line="62" selection-start-column="50" selection-end-line="62" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/geriatrics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/surveils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="9" column="36" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/LoadingIndicator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="15" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/pages/SurveilPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="36" column="51" selection-start-line="36" selection-start-column="51" selection-end-line="36" selection-end-column="51" />
+        <state relative-caret-position="22">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SensorsInformation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="32" column="12" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/RelativeInformation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1606">
+          <caret line="73" column="5" lean-forward="true" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pages/GeriatricsPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="118" selection-start-line="6" selection-start-column="118" selection-end-line="6" selection-end-column="118" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

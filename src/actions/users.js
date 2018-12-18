@@ -2,8 +2,9 @@ import {API_BASE} from "../config/env";
 import axios from 'axios';
 import {tokenizeValues} from './../helpers/backendHelper';
 
+
 export const UserActionList = {
-    CHECK_LOGIN:'CHECK_LOGIN'
+    CHECK_LOGIN:'CHECK_LOGIN',
 };
 
 //export const CHECK_LOGIN = 'CHECK_LOGIN';

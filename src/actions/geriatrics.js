@@ -5,7 +5,9 @@ import {encodeValues} from '../helpers/backendHelper';
 export const GeriatricsActionList = {
     FETCHED_LAST_STIMULUSES:'FETCHED_LAST_STIMULUSES',
     FETCHED_GERIATRIC_INFO:'FETCHED_GERIATRIC_INFO',
+
 } ;
+
 
 export function fetchGeriatricInfo(geriatric_id)
 {
